@@ -7,15 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCC535D8282A624C003A4DD5 /* CardShading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC535D7282A624C003A4DD5 /* CardShading.swift */; };
+		BCC535DA282A6267003A4DD5 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC535D9282A6267003A4DD5 /* CardColor.swift */; };
+		BCC535DC282A6288003A4DD5 /* CardShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC535DB282A6288003A4DD5 /* CardShape.swift */; };
+		BCC535DE282A62C6003A4DD5 /* CardNumberOfShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC535DD282A62C6003A4DD5 /* CardNumberOfShapes.swift */; };
+		BCC535E0282A62F8003A4DD5 /* DeckOfSetCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC535DF282A62F8003A4DD5 /* DeckOfSetCards.swift */; };
+		BCC535E2282A6378003A4DD5 /* SetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC535E1282A6378003A4DD5 /* SetCardView.swift */; };
+		BCC535E4282A65EC003A4DD5 /* SetCardDrawedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC535E3282A65EC003A4DD5 /* SetCardDrawedView.swift */; };
 		BCCF911D282A59C000C8DA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF911C282A59C000C8DA31 /* AppDelegate.swift */; };
 		BCCF911F282A59C000C8DA31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF911E282A59C000C8DA31 /* SceneDelegate.swift */; };
 		BCCF9121282A59C000C8DA31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF9120282A59C000C8DA31 /* ViewController.swift */; };
 		BCCF9124282A59C000C8DA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCF9122282A59C000C8DA31 /* Main.storyboard */; };
 		BCCF9126282A59C700C8DA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCF9125282A59C700C8DA31 /* Assets.xcassets */; };
 		BCCF9129282A59C700C8DA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCF9127282A59C700C8DA31 /* LaunchScreen.storyboard */; };
+		BCCF9133282A5BF700C8DA31 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF9132282A5BF700C8DA31 /* Grid.swift */; };
+		BCCF9135282A5C2C00C8DA31 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF9134282A5C2C00C8DA31 /* Card.swift */; };
+		BCCF9137282A5C9400C8DA31 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF9136282A5C9400C8DA31 /* SetGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BCC535D7282A624C003A4DD5 /* CardShading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShading.swift; sourceTree = "<group>"; };
+		BCC535D9282A6267003A4DD5 /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
+		BCC535DB282A6288003A4DD5 /* CardShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShape.swift; sourceTree = "<group>"; };
+		BCC535DD282A62C6003A4DD5 /* CardNumberOfShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberOfShapes.swift; sourceTree = "<group>"; };
+		BCC535DF282A62F8003A4DD5 /* DeckOfSetCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfSetCards.swift; sourceTree = "<group>"; };
+		BCC535E1282A6378003A4DD5 /* SetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardView.swift; sourceTree = "<group>"; };
+		BCC535E3282A65EC003A4DD5 /* SetCardDrawedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardDrawedView.swift; sourceTree = "<group>"; };
 		BCCF9119282A59C000C8DA31 /* DrawenSetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawenSetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCF911C282A59C000C8DA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCF911E282A59C000C8DA31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +41,9 @@
 		BCCF9125282A59C700C8DA31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCCF9128282A59C700C8DA31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCCF912A282A59C700C8DA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCCF9132282A5BF700C8DA31 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		BCCF9134282A5C2C00C8DA31 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		BCCF9136282A5C9400C8DA31 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,8 @@
 		BCCF911B282A59C000C8DA31 /* DrawenSetGame */ = {
 			isa = PBXGroup;
 			children = (
+				BCCF9131282A5A0500C8DA31 /* MyViews */,
+				BCCF9130282A59F900C8DA31 /* Model */,
 				BCCF911C282A59C000C8DA31 /* AppDelegate.swift */,
 				BCCF911E282A59C000C8DA31 /* SceneDelegate.swift */,
 				BCCF9120282A59C000C8DA31 /* ViewController.swift */,
@@ -65,6 +87,30 @@
 				BCCF912A282A59C700C8DA31 /* Info.plist */,
 			);
 			path = DrawenSetGame;
+			sourceTree = "<group>";
+		};
+		BCCF9130282A59F900C8DA31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCCF9134282A5C2C00C8DA31 /* Card.swift */,
+				BCCF9136282A5C9400C8DA31 /* SetGame.swift */,
+				BCC535D7282A624C003A4DD5 /* CardShading.swift */,
+				BCC535D9282A6267003A4DD5 /* CardColor.swift */,
+				BCC535DB282A6288003A4DD5 /* CardShape.swift */,
+				BCC535DD282A62C6003A4DD5 /* CardNumberOfShapes.swift */,
+				BCC535DF282A62F8003A4DD5 /* DeckOfSetCards.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCCF9131282A5A0500C8DA31 /* MyViews */ = {
+			isa = PBXGroup;
+			children = (
+				BCCF9132282A5BF700C8DA31 /* Grid.swift */,
+				BCC535E1282A6378003A4DD5 /* SetCardView.swift */,
+				BCC535E3282A65EC003A4DD5 /* SetCardDrawedView.swift */,
+			);
+			path = MyViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +123,7 @@
 				BCCF9115282A59C000C8DA31 /* Sources */,
 				BCCF9116282A59C000C8DA31 /* Frameworks */,
 				BCCF9117282A59C000C8DA31 /* Resources */,
+				BCC535E5282A694E003A4DD5 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -133,14 +180,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BCC535E5282A694E003A4DD5 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash\n    if which swiftlint >/dev/null; then\n        swiftlint lint --strict\n    else\n        echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n        exit 1\n    fi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BCCF9115282A59C000C8DA31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC535E0282A62F8003A4DD5 /* DeckOfSetCards.swift in Sources */,
+				BCC535E4282A65EC003A4DD5 /* SetCardDrawedView.swift in Sources */,
+				BCC535E2282A6378003A4DD5 /* SetCardView.swift in Sources */,
+				BCC535DC282A6288003A4DD5 /* CardShape.swift in Sources */,
 				BCCF9121282A59C000C8DA31 /* ViewController.swift in Sources */,
 				BCCF911D282A59C000C8DA31 /* AppDelegate.swift in Sources */,
+				BCC535DE282A62C6003A4DD5 /* CardNumberOfShapes.swift in Sources */,
+				BCCF9135282A5C2C00C8DA31 /* Card.swift in Sources */,
+				BCC535DA282A6267003A4DD5 /* CardColor.swift in Sources */,
+				BCC535D8282A624C003A4DD5 /* CardShading.swift in Sources */,
 				BCCF911F282A59C000C8DA31 /* SceneDelegate.swift in Sources */,
+				BCCF9137282A5C9400C8DA31 /* SetGame.swift in Sources */,
+				BCCF9133282A5BF700C8DA31 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +371,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,6 +400,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
