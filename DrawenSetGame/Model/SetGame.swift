@@ -7,7 +7,7 @@
 import Foundation
 final class SetGame {
     private var deck: DeckOfSetCards
-    private let maxCardsOnBoard: Int
+   // private let maxCardsOnBoard: Int
     private(set) var board: [Card?]
     private(set) var points = 0
     private var selectedCardIndecies: [Int] {
@@ -17,10 +17,10 @@ final class SetGame {
         selectedCardIndecies.count
     }
     // ------ Methods ------ \\
-    init(maxNumOfCardsOnBoard: Int, numOfInitialReviledCards: Int) {
+    init( numOfInitialReviledCards: Int) {
         self.deck = DeckOfSetCards()
-        self.maxCardsOnBoard = maxNumOfCardsOnBoard
-        self.board = [Card?](repeating: nil, count: maxNumOfCardsOnBoard)
+       // self.maxCardsOnBoard = maxNumOfCardsOnBoard
+        self.board = [Card?]()
         for _ in 0..<numOfInitialReviledCards {
             putNewCardOnBoard()
         }
@@ -31,7 +31,7 @@ final class SetGame {
         board[index] = nil
     }
     func putNewCardOnBoard() {
-        assert(board.count <= maxCardsOnBoard, "SetGame.revielNewCardFromDeck() , you try to draw more then max cards allowed on board! which is \(maxCardsOnBoard) ")
+        assert(deck.isEmptyDeck(), "SetGame.revielNewCardFromDeck() , you try to draw more then max cards allowed on board! which is \(maxCardsOnBoard) ")
         let vacantSpace = board.firstIndex(of: nil)
         if vacantSpace != nil {
             board[vacantSpace!] = deck.fetchCard()

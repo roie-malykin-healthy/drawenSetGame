@@ -26,6 +26,9 @@ struct DeckOfSetCards {
         deck.shuffle() // #warning Need to test if this does not disrupt game logic
         
     }
+    func isEmptyDeck() {
+        deck.isEmpty
+    }
     mutating func fetchCard() -> Card? {
         deck.popLast()
     }

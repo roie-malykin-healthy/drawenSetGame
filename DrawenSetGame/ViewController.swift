@@ -19,7 +19,7 @@ final class ViewController: UIViewController {
     @IBOutlet private weak var give3CardsBUtton: UIButton!
     @IBOutlet private weak var newGameButton: UIButton!
     @IBOutlet private weak var scoreLabel: UILabel!
-    private lazy var game = SetGame(maxNumOfCardsOnBoard: maxNumOfCardsOnBoard, numOfInitialReviledCards: 12)
+    private lazy var game = SetGame(numOfInitialReviledCards: 12)
     // ------ Actions ------\\
     @IBAction private func touchCard(_ sender: UIButton) {
         if let cardNumber = setCardButtons.firstIndex(of: sender) {
