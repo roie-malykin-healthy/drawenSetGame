@@ -7,9 +7,14 @@
 import UIKit
 
 final class ViewController: UIViewController {
+    
     // ------ Attributes ------\\
     // private var grid = Grid(layout: <#T##Grid.Layout#>, frame: myView.bounds)
-    private let maxNumOfCardsOnBoard = 24
+    // var grid = Grid(layout: .aspectRatio(SetCardView.Proper.cardViewAspectRatio), frame: boardView.bounds)
+   
+    @IBOutlet private weak var boardView: UIView!
+    private var grid: Grid?
+    private let maxNumOfCardsOnBoard = 81
     @IBOutlet private var setCardButtons: [UIButton]!
     @IBOutlet private weak var give3CardsBUtton: UIButton!
     @IBOutlet private weak var newGameButton: UIButton!
@@ -129,13 +134,16 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Init the grid with 12 cards
+        grid = Grid(layout:Grid.Layout.aspectRatio(8.0/5.0), frame: boardView.frame)
         // Set up an uniform cardButton look
-        for cardButton in setCardButtons {
-            cardButton.backgroundColor = UIColor.black
-            cardButton.layer.cornerRadius = 8.0
-            cardButton.layer.borderWidth = 3.0
-        }
-       updateViewFromModel()
+//        for cardButton in setCardButtons {
+//            cardButton.backgroundColor = UIColor.black
+//            cardButton.layer.cornerRadius = 8.0
+//            cardButton.layer.borderWidth = 3.0
+//        }
+//       updateViewFromModel()
+        
     }
     // Card Style Constants here.
 //    struct SetCardStyle {

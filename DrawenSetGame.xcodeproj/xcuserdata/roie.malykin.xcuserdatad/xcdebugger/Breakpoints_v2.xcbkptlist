@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FDBDFCDA-3A3B-445D-A7B3-73B9A9CF528F"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D0BF9BC-82D9-415E-8552-2D786F0AE5CC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrawenSetGame/MyViews/SetCardView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "diamondPath()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6D0BF9BC-82D9-415E-8552-2D786F0AE5CC - 60faf38cbb7b95f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DrawenSetGame.SetCardView.SizeRatio.init(rawValue: CoreGraphics.CGFloat) -&gt; Swift.Optional&lt;DrawenSetGame.SetCardView.SizeRatio&gt;"
+                  moduleName = "DrawenSetGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roie.malykin/Developer/DrawenSetGame/DrawenSetGame/MyViews/SetCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  uuid = "6D0BF9BC-82D9-415E-8552-2D786F0AE5CC - 120b99c719597e68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DrawenSetGame.SetCardView.SizeRatio.rawValue.getter : CoreGraphics.CGFloat"
+                  moduleName = "DrawenSetGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roie.malykin/Developer/DrawenSetGame/DrawenSetGame/MyViews/SetCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
