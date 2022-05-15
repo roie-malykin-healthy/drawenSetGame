@@ -21,10 +21,6 @@ final class Card: Equatable, CustomStringConvertible {
     let shape: CardShape
     let shading: CardShading
     let numberOfShapes: CardNumberOfShapes
-    var isMatched = false
-    var isMissMatched = false
-    var isSelected = false
-    // var isRevieled = false
     private static var indetifierFactory = 0
     // static func ==(otherCard: Card){
     // ------ Methods ------\\

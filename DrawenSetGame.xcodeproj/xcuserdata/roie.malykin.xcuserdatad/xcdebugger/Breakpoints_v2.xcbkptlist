@@ -14,42 +14,26 @@
             filePath = "DrawenSetGame/MyViews/SetCardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "diamondPath()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "diamondPath(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6D0BF9BC-82D9-415E-8552-2D786F0AE5CC - 60faf38cbb7b95f2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DrawenSetGame.SetCardView.SizeRatio.init(rawValue: CoreGraphics.CGFloat) -&gt; Swift.Optional&lt;DrawenSetGame.SetCardView.SizeRatio&gt;"
-                  moduleName = "DrawenSetGame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roie.malykin/Developer/DrawenSetGame/DrawenSetGame/MyViews/SetCardView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "39">
-               </Location>
-               <Location
-                  uuid = "6D0BF9BC-82D9-415E-8552-2D786F0AE5CC - 120b99c719597e68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DrawenSetGame.SetCardView.SizeRatio.rawValue.getter : CoreGraphics.CGFloat"
-                  moduleName = "DrawenSetGame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roie.malykin/Developer/DrawenSetGame/DrawenSetGame/MyViews/SetCardView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "43">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F1D2FC3-7BC6-4CB4-B11C-7568A873DBFB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrawenSetGame/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "newGameView()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

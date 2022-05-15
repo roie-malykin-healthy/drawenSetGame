@@ -26,10 +26,20 @@ struct DeckOfSetCards {
         deck.shuffle() // #warning Need to test if this does not disrupt game logic
         
     }
-    func isEmptyDeck() {
+    func isEmptyDeack() -> Bool {
         deck.isEmpty
+    }
+    func isNotEmptyDeck() -> Bool {
+        !self.isEmptyDeack()
+    }
+    mutating func returnToDeck(card: Card) {
+        assert(!deck.contains(card), "DeckOfSetCards.returnToDeck: Warning! returning card: \(card) , is FORBIDDEN , this card is somehow allready in deck! this is a major bug!")
+        deck.append(card)
     }
     mutating func fetchCard() -> Card? {
         deck.popLast()
+    }
+    mutating func shuffleDeck() {
+        deck.shuffle()
     }
 }

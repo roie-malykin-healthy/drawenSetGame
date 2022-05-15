@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,20 +13,37 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrawenSetGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGZ-kB-hJb" customClass="SetBoardView" customModule="DrawenSetGame" customModuleProvider="target">
-                                <rect key="frame" x="62" y="94" width="291" height="553"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGZ-kB-hJb" customClass="SetBoardView" customModule="DrawenSetGame" customModuleProvider="target">
+                                <rect key="frame" x="64" y="8" width="768" height="318"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Ah-D1w">
+                                <rect key="frame" x="150" y="334" width="593" height="59"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IGZ-kB-hJb" secondAttribute="bottom" constant="67" id="6El-Zs-dtl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IGZ-kB-hJb" secondAttribute="trailing" constant="20" id="6Kl-YO-D4p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g0l-Ah-D1w" secondAttribute="bottom" id="UnS-l3-vau"/>
+                            <constraint firstItem="IGZ-kB-hJb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="VUg-I4-rxw"/>
+                            <constraint firstItem="IGZ-kB-hJb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cxP-SX-Qdw"/>
+                            <constraint firstItem="g0l-Ah-D1w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="udf-8b-n5e"/>
+                            <constraint firstItem="g0l-Ah-D1w" firstAttribute="top" secondItem="IGZ-kB-hJb" secondAttribute="bottom" constant="8" symbolic="YES" id="xtF-il-yRc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g0l-Ah-D1w" secondAttribute="trailing" constant="109" id="y6X-a7-ead"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="boardView" destination="IGZ-kB-hJb" id="mPl-Wb-TDT"/>
+                        <outlet property="boardView" destination="8bC-Xf-vdC" id="Wky-5s-9v7"/>
+                        <outlet property="scoreLabel" destination="g0l-Ah-D1w" id="JVD-vF-Mep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -37,6 +54,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
