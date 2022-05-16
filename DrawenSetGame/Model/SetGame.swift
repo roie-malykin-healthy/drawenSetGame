@@ -104,13 +104,19 @@ final class SetGame {
                     }
                 case 4: // after 3 cards are allready selected
                     if !matchedCardsIndecies.isEmpty {
-                        assert(matchedCardsIndecies.count == 3, "SetGame.chooseCard: ypu choose a 4th card after the three selected are matched, but the number of matched cards is \(matchedCardsIndecies.count) , supposed to be 3!" )
+                        let matchedIndecies = matchedCardsIndecies
+                        assert(matchedIndecies.count == 3, "SetGame.chooseCard: ypu choose a 4th card after the three selected are matched, but the number of matched cards is \(matchedIndecies) , supposed to be 3!" )
+                        for matchedInx in matchedIndecies {
+                            removeFromSelectedIndecies(i: matchedInx)
+                            removeCardFromBoard(index: matchedInx)
+                            putNewCardOnBoard()
+                        }
                         matchedCardsIndecies.removeAll()
                     } else { // Three selected Cards are missmatched
                         missMatchedCardIndecies.removeAll()
                     }
-                selectedCardIndecies.removeAll()
-                addToSelectedIndecies(cardIndex: index)
+                    selectedCardIndecies.removeAll()
+                    addToSelectedIndecies(cardIndex: index)
                 default:
                     return true
                 }
