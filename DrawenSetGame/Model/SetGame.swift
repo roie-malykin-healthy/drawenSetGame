@@ -10,9 +10,9 @@ final class SetGame {
    // private let maxCardsOnBoard: Int
     private(set) var board: [Card?]
     private(set) var points = 0
-    private var selectedCardIndecies: [Int] = [Int]()
-    private var matchedCardsIndecies: [Int] = [Int]()
-    private var missMatchedCardIndecies: [Int] = [Int]()
+    private var selectedCardIndecies = Set<Int>()
+    private var matchedCardsIndecies = Set<Int>()
+    private var missMatchedCardIndecies = Set<Int>()
     
     private var numOfAllreadySelectedCards: Int {
         selectedCardIndecies.count
@@ -30,7 +30,20 @@ final class SetGame {
             print("MAJOR ERROR!!!")
         }
     }
+    private func addToSelectedIndecies(cardIndex: Int) {
+//        assert(selectedCardIndecies.contains(cardIndex), "SetGame.addToSelectedIndecies(\(cardIndex)) , MAJOR LOGIC ERROR this card is allready selected!!!")
+        selectedCardIndecies.insert(cardIndex)
+    }
     
+    private func addToMatchedIndecies(cardIndex: Int) {
+//        assert(matchedCardsIndecies.contains(cardIndex), "SetGame.addToSelectedIndecies(\(cardIndex)) , MAJOR LOGIC ERROR this card is allready selected!!!")
+        matchedCardsIndecies.insert(cardIndex)
+    }
+    
+    private func addToMissMatchedIndecies(cardIndex: Int) {
+//        assert(missMatchedCardIndecies.contains(cardIndex), "SetGame.addToSelectedIndecies(\(cardIndex)) , MAJOR LOGIC ERROR this card is allready selected!!!")
+        missMatchedCardIndecies.insert(cardIndex)
+    }
     // ------ Methods ------ \\
     init( numOfInitialReviledCards: Int) {
         self.deck = DeckOfSetCards()
@@ -72,37 +85,32 @@ final class SetGame {
             if isSelected(cardIndex: index) {
                 removeFromSelectedIndecies(i: index)
             } else {
-                selectedCardIndecies.append(index)
+                addToSelectedIndecies(cardIndex: index)
                 let selectedIndecies = selectedCardIndecies // Might be unneeded after logic change
                 let countSelectedIndecies = selectedIndecies.count  // Might be unneeded after logic change
                 // print("choose card : num of allready selected cards \(countSelectedIndecies)")
                 switch countSelectedIndecies {
                 case 3:
-                        if areSelectedCardsMatch(selectedCardIndecies: selectedIndecies) {
+                        if areSelectedCardsMatch(selectedCardIndecies: Array(selectedIndecies)) {
                         self.points += 5
                         for index in selectedIndecies {
-                            matchedCardsIndecies.append(index)
+                            addToMatchedIndecies(cardIndex: index)
                         }
                     } else {
                         self.points -= 1
                         for index in selectedIndecies {
-                            missMatchedCardIndecies.append(index)
+                            addToMissMatchedIndecies(cardIndex: index)
                         }
                     }
                 case 4: // after 3 cards are allready selected
                     if !matchedCardsIndecies.isEmpty {
-                        let matchedIndecies = matchedCardsIndecies
-                        assert(matchedIndecies.count == 3, "SetGame.chooseCard: ypu choose a 4th card after the three selected are matched, but the number of matched cards is \(matchedIndecies) , supposed to be 3!" )
-                        for matchedInx in matchedIndecies {
-                            removeFromSelectedIndecies(i: matchedInx)
-                            removeCardFromBoard(index: matchedInx)
-                            putNewCardOnBoard()
-                        }
+                        assert(matchedCardsIndecies.count == 3, "SetGame.chooseCard: ypu choose a 4th card after the three selected are matched, but the number of matched cards is \(matchedCardsIndecies.count) , supposed to be 3!" )
+                        matchedCardsIndecies.removeAll()
                     } else { // Three selected Cards are missmatched
                         missMatchedCardIndecies.removeAll()
-                        selectedCardIndecies.removeAll()
-                        selectedCardIndecies.append(index)
                     }
+                selectedCardIndecies.removeAll()
+                addToSelectedIndecies(cardIndex: index)
                 default:
                     return true
                 }
