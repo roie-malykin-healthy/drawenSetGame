@@ -22,6 +22,14 @@ final class SetGame {
     func isSelected(cardIndex: Int) -> Bool { selectedCardIndecies.contains(cardIndex) }
     func isMatched(cardIndex: Int) -> Bool { matchedCardsIndecies.contains(cardIndex) }
     func isMissMatched(cardIndex: Int) -> Bool { missMatchedCardIndecies.contains(cardIndex) }
+    private func removeFromSelectedIndecies(i: Int) {
+        assert(selectedCardIndecies.firstIndex(of: i)! != nil, "SetGame.removeFromSelectedIndecies(index: Int) Error ! you are trying to remove and index: \(i) ,  that is not contained in selectedCardIndecies")
+        if let indexToRemove = selectedCardIndecies.firstIndex(of: i) {
+            selectedCardIndecies.remove(at: indexToRemove)
+        } else {
+            print("MAJOR ERROR!!!")
+        }
+    }
     
     // ------ Methods ------ \\
     init( numOfInitialReviledCards: Int) {
@@ -38,11 +46,16 @@ final class SetGame {
         // assert(board[index] != nil, "SetGame.removeCardFromBoard(index:\(index)) , Chosen index is nil , Error you try to remove a non existing card ")
         board.remove(at: index)
     }
-    func putNewCardOnBoard() {
+    
+     func putNewCardOnBoard() {
         if deck.isNotEmptyDeck() {
-            board.append(deck.fetchCard())
+            if let nilIndex = board.firstIndex(of: nil) { // Put card on empty board space
+                board[nilIndex] = fetchCard()
+            } else { // If no empty board space found, just append a new card
+                board.append(fetchCard())
             }
         }
+     }
     private func returnCardToDeck(index: Int) {
         deck.returnToDeck(card: board[index]!)
         board[index] = nil
@@ -57,7 +70,7 @@ final class SetGame {
         print("chosenCardIs: \(chosenCard)")
         if !isMatched(cardIndex: index) {
             if isSelected(cardIndex: index) {
-                selectedCardIndecies.remove(at: index)
+                removeFromSelectedIndecies(i: index)
             } else {
                 selectedCardIndecies.append(index)
                 let selectedIndecies = selectedCardIndecies // Might be unneeded after logic change
@@ -65,7 +78,7 @@ final class SetGame {
                 // print("choose card : num of allready selected cards \(countSelectedIndecies)")
                 switch countSelectedIndecies {
                 case 3:
-                    if areSelectedCardsMatch(selectedCardIndecies: selectedIndecies) {
+                        if areSelectedCardsMatch(selectedCardIndecies: selectedIndecies) {
                         self.points += 5
                         for index in selectedIndecies {
                             matchedCardsIndecies.append(index)
@@ -80,17 +93,15 @@ final class SetGame {
                     if !matchedCardsIndecies.isEmpty {
                         let matchedIndecies = matchedCardsIndecies
                         assert(matchedIndecies.count == 3, "SetGame.chooseCard: ypu choose a 4th card after the three selected are matched, but the number of matched cards is \(matchedIndecies) , supposed to be 3!" )
-                        for index in matchedIndecies {
-                            selectedCardIndecies.remove(at: index)
-                            removeCardFromBoard(index: index)
+                        for matchedInx in matchedIndecies {
+                            removeFromSelectedIndecies(i: matchedInx)
+                            removeCardFromBoard(index: matchedInx)
                             putNewCardOnBoard()
                         }
                     } else { // Three selected Cards are missmatched
-                        let missMatchedIndecis = missMatchedCardIndecies
-                        for index in missMatchedIndecis {
-                            selectedCardIndecies.remove(at: index)
-                            missMatchedCardIndecies.remove(at: index)
-                        }
+                        missMatchedCardIndecies.removeAll()
+                        selectedCardIndecies.removeAll()
+                        selectedCardIndecies.append(index)
                     }
                 default:
                     return true
@@ -127,10 +138,9 @@ final class SetGame {
     
     func shuffleCards() {
         let numOfCardReturnedToDeck = board.count
-        for index in 1...numOfCardReturnedToDeck {
+        for index in 0..<numOfCardReturnedToDeck {
             returnCardToDeck(index: index)
         }
-       
         assert( board.compactMap { $0 }.isEmpty, "SetGame.shuffleCards() ERROR!!! Not all cards returned to deck, there are \(board.count) cards left in the deck top card \(String(describing: board[0])) ")
         deck.shuffleDeck()
         for _ in 1...numOfCardReturnedToDeck {

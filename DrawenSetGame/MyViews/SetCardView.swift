@@ -30,27 +30,28 @@ import UIKit
 //        lowerRightCornerLabel.frame.origin = CGPoint(x: bounds.maxX , y: bounds.maxY).offsetBy(dx: -cornerOffset, dy: -cornerOffset).offsetBy(dx: -lowerRightCornerLabel.frame.size.width, dy: -lowerRightCornerLabel.frame.size.height)
     }
     // MARK: Constants
-    private func diamondPath(_ fatherBounds: CGRect) -> UIBezierPath {
+    private func diamondPath(_ drawingBounds: CGRect) -> UIBezierPath {
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: fatherBounds.midX, y: fatherBounds.maxY / 6 ))
-        path.addLine(to: CGPoint(x: fatherBounds.maxX * (3 / 4), y: fatherBounds.midY))
-        path.addLine(to: CGPoint(x: fatherBounds.midX, y: fatherBounds.maxY * ( 5 / 6 ) ))
-        path.addLine(to: CGPoint(x: fatherBounds.maxX / 4, y: fatherBounds.midY))
-        path.addLine(to: CGPoint(x: fatherBounds.midX, y: fatherBounds.maxY / 6 ))
+        path.move(to: CGPoint(x: drawingBounds.midX, y: drawingBounds.minY ))
+        path.addLine(to: CGPoint(x: drawingBounds.maxX, y: drawingBounds.midY ))
+        path.addLine(to: CGPoint(x: drawingBounds.midX, y: drawingBounds.maxY  ))
+        path.addLine(to: CGPoint(x: drawingBounds.minX, y: drawingBounds.midY))
+        path.close()
         return path
     }
-    private func circlePath(_ fatherBounds: CGRect) -> UIBezierPath {
-        let niceRadiusUnits = CGFloat.minimum(fatherBounds.maxX, fatherBounds.maxY) / 3
+    private func circlePath(_ drawingBounds: CGRect) -> UIBezierPath {
+        let niceRadiusUnits = CGFloat(drawingBounds.maxX / 2)
         let path = UIBezierPath()
-        path.addArc(withCenter: CGPoint(x: fatherBounds.midX, y: bounds.midY), radius: niceRadiusUnits, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        path.addArc(withCenter: CGPoint(x: drawingBounds.midX, y: bounds.midY), radius: niceRadiusUnits, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         return path
     }
-    private func tildaPath(_ fatherBounds: CGRect) -> UIBezierPath {
+    private func tildaPath(_ drawingBounds: CGRect) -> UIBezierPath {
         let path = UIBezierPath()
         // For now it draws triangle
-        path.move(to: CGPoint(x: fatherBounds.midX, y: fatherBounds.maxY / 6 ))
-        path.addLine(to: CGPoint(x: fatherBounds.maxX * (3 / 4), y: fatherBounds.midY))
-        path.addLine(to: CGPoint(x: fatherBounds.maxX / 4, y: fatherBounds.midY))
+        path.move(to: CGPoint(x: drawingBounds.midX, y: drawingBounds.minY))
+        path.addLine(to: CGPoint(x: drawingBounds.maxX, y: drawingBounds.maxY))
+        path.addLine(to: CGPoint(x: drawingBounds.minX, y: drawingBounds.maxY))
+        path.close()
         return path
     }
     
@@ -77,9 +78,9 @@ import UIKit
         let context = UIGraphicsGetCurrentContext()
         let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         roundedRect.addClip()
-        UIColor.white.setFill()
+        #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).setFill()
         roundedRect.fill()
-        let grid = Grid(layout: .dimensions(rowCount: card.numberOfShapes.rawValue, columnCount: 1), frame: roundedRect.bounds.insetBy(dx: 4, dy: 4))
+        let grid = Grid(layout: .dimensions(rowCount: card.numberOfShapes.rawValue, columnCount: 1), frame: roundedRect.bounds.insetBy(dx: 3, dy: 3))
         var color: UIColor
                 switch card.color {
                 case .red:
@@ -90,15 +91,15 @@ import UIKit
                     color = #colorLiteral(red: 0.6646182537, green: 0.911608398, blue: 0.5144656897, alpha: 1)
                 }
         
-        for indexToAdd in 0..<card.numberOfShapes.rawValue {
+        for indextoAddDraw in 0..<card.numberOfShapes.rawValue {
             var drawingOnCard = UIBezierPath()
             switch card.shape {
             case .triangle:
-                drawingOnCard = tildaPath(grid[indexToAdd]!.insetBy(dx: 3, dy: 3))
+                drawingOnCard = tildaPath(grid[indextoAddDraw]!.insetBy(dx: 3, dy: 3))
             case .square:
-                drawingOnCard = diamondPath(grid[indexToAdd]!.insetBy(dx: 3, dy: 3))
+                drawingOnCard = diamondPath(grid[indextoAddDraw]!.insetBy(dx: 3, dy: 3))
             case .cicrle:
-                drawingOnCard = circlePath(grid[indexToAdd]!.insetBy(dx: 3, dy: 3))
+                drawingOnCard = circlePath(grid[indextoAddDraw]!.insetBy(dx: 3, dy: 3))
             }
             switch card.shading {
             case .open:
@@ -172,7 +173,7 @@ import UIKit
                 stripes.addLine(to: CGPoint(x: bounds.origin.x + x, y: bounds.origin.y + bounds.size.height ))
             }
             shape.addClip()
-            stripes.lineWidth = 4
+            stripes.lineWidth = 2
             color.setStroke()
             stripes.stroke()
             shape.append(stripes)
