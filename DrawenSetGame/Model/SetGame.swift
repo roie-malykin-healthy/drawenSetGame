@@ -23,7 +23,7 @@ final class SetGame {
     func isMatched(cardIndex: Int) -> Bool { matchedCardsIndecies.contains(cardIndex) }
     func isMissMatched(cardIndex: Int) -> Bool { missMatchedCardIndecies.contains(cardIndex) }
     private func removeFromSelectedIndecies(i: Int) {
-        assert(selectedCardIndecies.firstIndex(of: i)! != nil, "SetGame.removeFromSelectedIndecies(index: Int) Error ! you are trying to remove and index: \(i) ,  that is not contained in selectedCardIndecies")
+//        assert(selectedCardIndecies.firstIndex(of: i)! != nil, "SetGame.removeFromSelectedIndecies(index: Int) Error ! you are trying to remove and index: \(i) ,  that is not contained in selectedCardIndecies")
         if let indexToRemove = selectedCardIndecies.firstIndex(of: i) {
             selectedCardIndecies.remove(at: indexToRemove)
         } else {

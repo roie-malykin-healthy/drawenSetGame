@@ -40,10 +40,7 @@ import UIKit
         return path
     }
     private func circlePath(_ drawingBounds: CGRect) -> UIBezierPath {
-        let niceRadiusUnits = CGFloat(drawingBounds.maxX / 2)
-        let path = UIBezierPath()
-        path.addArc(withCenter: CGPoint(x: drawingBounds.midX, y: bounds.midY), radius: niceRadiusUnits, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        return path
+        UIBezierPath(ovalIn: drawingBounds)
     }
     private func tildaPath(_ drawingBounds: CGRect) -> UIBezierPath {
         let path = UIBezierPath()
