@@ -10,8 +10,6 @@ final class ViewController: UIViewController {
     // MARK: Attributes
     private lazy var game = SetGame(numOfInitialReviledCards: 12)
     private var grid = Grid(layout: Grid.Layout.aspectRatio(myAspectRatio))
-    private let maxNumOfCardsOnBoard = 81
-    
     // MARK: UIObjects
     var board: [SetCardView] = []
     @IBOutlet private weak var scoreLabel: UILabel!
@@ -32,18 +30,28 @@ final class ViewController: UIViewController {
             print("Chosen card was not in cardButton! - > This is a bug")
         }
     }
+    @objc func handleTap(sender: SetCardView) {
+        touchCard(sender)
+    }
     
-    @IBAction private func touch3MoreCards(_ sender: UIButton) {
+    @objc func deal3MoreCards(sender: UIView) {
+        print("gesture deal3MoreCards is activated")
         for _ in 1...3 {
             game.putNewCardOnBoard()
         }
         updateViewFromModel()
     }
     
-    @IBAction private func touchNewGame(_ sender: UIButton) {
-        // newGameView()
+    @objc func shuffle(sender: UIView) {
+        // Before shuffle safty check
+        let numOfCardViewOnBoard = board.count
+        let numOfCardInModel = game.board.count
+        game.shuffleCards()
+        // After shuffle safty check
+        assert(numOfCardInModel == game.board.count, "ViewController.shuffle(senderL UIView) , number of cards in model was \(numOfCardInModel) , and now it is \(game.board.count)")
+        assert(numOfCardViewOnBoard == board.count, "ViewController.shuffle(senderL UIView) , number of cards in ViewController was \(numOfCardViewOnBoard) , and now it is \(board.count)")
+        updateUI()
     }
-    
     func newGameView() {
         game = SetGame( numOfInitialReviledCards: 12)
         for card in game.board where card != nil {
@@ -114,30 +122,6 @@ final class ViewController: UIViewController {
     
     private func clearAllSubViewsOfBoard() {
         boardView.subviews.forEach({ $0.removeFromSuperview() })
-    }
-    //
-    
-    @objc func handleTap(sender: SetCardView) {
-        touchCard(sender)
-    }
-    
-    @objc func deal3MoreCards(sender: UIView) {
-        print("gesture deal3MoreCards is activated")
-        for _ in 1...3 {
-            game.putNewCardOnBoard()
-        }
-        updateViewFromModel()
-    }
-    
-    @objc func shuffle(sender: UIView) {
-        // Before shuffle safty check
-        let numOfCardViewOnBoard = board.count
-        let numOfCardInModel = game.board.count
-        game.shuffleCards()
-        // After shuffle safty check
-        assert(numOfCardInModel == game.board.count, "ViewController.shuffle(senderL UIView) , number of cards in model was \(numOfCardInModel) , and now it is \(game.board.count)")
-        assert(numOfCardViewOnBoard == board.count, "ViewController.shuffle(senderL UIView) , number of cards in ViewController was \(numOfCardViewOnBoard) , and now it is \(board.count)")
-        updateUI()
     }
     override func viewDidLayoutSubviews() { // So the app will redraw all sublayouts when screen is tilted.
         grid = Grid(layout: .aspectRatio(myAspectRatio), frame: boardView.bounds)
