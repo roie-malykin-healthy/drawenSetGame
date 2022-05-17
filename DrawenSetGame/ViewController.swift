@@ -146,7 +146,8 @@ final class ViewController: UIViewController {
         assert(numOfCardViewOnBoard == board.count, "ViewController.shuffle(senderL UIView) , number of cards in ViewController was \(numOfCardViewOnBoard) , and now it is \(board.count)")
         updateUI()
     }
-    //    private func showGameOverAlert() {
-    //
-    //    }
+    override func viewDidLayoutSubviews() { // So the app will redraw all sublayouts when screen is tilted.
+        grid = Grid(layout: .aspectRatio(myAspectRatio), frame: boardView.bounds)
+        updateViewFromModel()
+    }
 }

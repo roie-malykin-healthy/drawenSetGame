@@ -17,25 +17,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGZ-kB-hJb">
-                                <rect key="frame" x="0.0" y="52" width="414" height="698"/>
+                                <rect key="frame" x="22" y="44" width="371" height="673"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="gSB-Hp-tIf">
-                                <rect key="frame" x="43" y="774" width="333" height="98"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalCentering" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="gSB-Hp-tIf">
+                                <rect key="frame" x="41" y="764" width="332" height="96"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-6Y-Wp1">
-                                        <rect key="frame" x="0.0" y="0.0" width="66" height="98"/>
+                                        <rect key="frame" x="0.0" y="4" width="65.5" height="88"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Ah-D1w">
-                                        <rect key="frame" x="122" y="0.0" width="89" height="98"/>
+                                        <rect key="frame" x="122" y="33" width="89" height="30"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-LK-Hc9">
-                                        <rect key="frame" x="267" y="0.0" width="66" height="98"/>
+                                        <rect key="frame" x="267.5" y="4" width="64.5" height="88"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -44,12 +44,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IGZ-kB-hJb" secondAttribute="bottom" constant="67" id="6El-Zs-dtl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IGZ-kB-hJb" secondAttribute="bottom" constant="153" id="6El-Zs-dtl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IGZ-kB-hJb" secondAttribute="trailing" constant="20" id="6Kl-YO-D4p"/>
-                            <constraint firstItem="IGZ-kB-hJb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="VUg-I4-rxw"/>
-                            <constraint firstItem="IGZ-kB-hJb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cxP-SX-Qdw"/>
-                            <constraint firstItem="gSB-Hp-tIf" firstAttribute="top" secondItem="IGZ-kB-hJb" secondAttribute="bottom" constant="24" id="ghC-sL-Wwh"/>
-                            <constraint firstItem="gSB-Hp-tIf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="hN5-do-TSa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gSB-Hp-tIf" secondAttribute="bottom" constant="10" id="GcC-wH-zju"/>
+                            <constraint firstItem="IGZ-kB-hJb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-8" id="VUg-I4-rxw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gSB-Hp-tIf" secondAttribute="trailing" constant="41" id="Z8l-vp-kek"/>
+                            <constraint firstItem="IGZ-kB-hJb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="cxP-SX-Qdw"/>
+                            <constraint firstItem="gSB-Hp-tIf" firstAttribute="top" secondItem="IGZ-kB-hJb" secondAttribute="bottom" constant="47" id="ghC-sL-Wwh"/>
+                            <constraint firstItem="gSB-Hp-tIf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="hN5-do-TSa"/>
                         </constraints>
                     </view>
                     <connections>
