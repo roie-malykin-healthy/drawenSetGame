@@ -30,8 +30,8 @@
             filePath = "DrawenSetGame/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "newGameView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,10 +78,10 @@
             filePath = "DrawenSetGame/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "isSelected(cardIndex:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "C747BE7B-EA94-42F2-86FA-707C60CF293F - 7801363a3710839"
@@ -156,9 +156,9 @@
             filePath = "DrawenSetGame/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "touchNewGame(_:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "newGameView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -172,9 +172,9 @@
             filePath = "DrawenSetGame/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "handleTap(sender:)"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "clearAllSubViewsOfBoard()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -188,10 +188,10 @@
             filePath = "DrawenSetGame/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "deal3MoreCards(sender:)"
-            landmarkType = "7">
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -204,9 +204,9 @@
             filePath = "DrawenSetGame/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "shuffle(sender:)"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "deal3MoreCards(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

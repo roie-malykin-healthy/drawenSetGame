@@ -7,14 +7,14 @@
 import UIKit
 let myAspectRatio = CGFloat(5.0 / 8.0)
 final class ViewController: UIViewController {
+    // MARK: Attributes
     private var grid = Grid(layout: Grid.Layout.aspectRatio(myAspectRatio))
     private let maxNumOfCardsOnBoard = 81
-    @IBOutlet private weak var scoreLabel: UILabel!
     private lazy var game = SetGame(numOfInitialReviledCards: 12)
-    var board: [SetCardView] = []
+    // MARK: Views
+    @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var boardView: UIView!
-    var selectedCardsToRemove: [Int] = []
-    
+    var board: [SetCardView] = []
     // MARK: Utility methods
     private func isSelected(cardIndex: Int) -> Bool { game.isSelected(cardIndex: cardIndex) }
     private func isMatched(cardIndex: Int) -> Bool { game.isMatched(cardIndex: cardIndex) }
