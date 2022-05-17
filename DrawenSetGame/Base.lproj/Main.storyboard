@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGZ-kB-hJb">
-                                <rect key="frame" x="22" y="44" width="371" height="673"/>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IGZ-kB-hJb">
+                                <rect key="frame" x="23" y="36" width="371" height="629"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="gSB-Hp-tIf">
-                                <rect key="frame" x="41" y="756" width="332" height="96"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gSB-Hp-tIf">
+                                <rect key="frame" x="41" y="712" width="332" height="140"/>
                                 <subviews>
                                     <view autoresizesSubviews="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-6Y-Wp1">
-                                        <rect key="frame" x="0.0" y="11.5" width="55" height="73"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="140"/>
                                         <color key="backgroundColor" systemColor="systemMintColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SkT-6Y-Wp1" secondAttribute="height" multiplier="55:73" id="rR3-rD-I1g"/>
@@ -32,29 +33,25 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Ah-D1w">
-                                        <rect key="frame" x="121.5" y="33" width="89" height="30"/>
+                                        <rect key="frame" x="113.5" y="55" width="105" height="30"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view autoresizesSubviews="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-LK-Hc9">
-                                        <rect key="frame" x="276" y="11.5" width="56" height="73"/>
+                                        <rect key="frame" x="226.5" y="1.5" width="105.5" height="137.5"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="eBf-LK-Hc9" secondAttribute="height" multiplier="56:73" id="B3z-kk-S4Q"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="gSB-Hp-tIf" secondAttribute="height" multiplier="83:24" id="lPx-cQ-wKH"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IGZ-kB-hJb" secondAttribute="bottom" constant="153" id="6El-Zs-dtl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IGZ-kB-hJb" secondAttribute="trailing" constant="20" id="6Kl-YO-D4p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gSB-Hp-tIf" secondAttribute="bottom" constant="10" id="GcC-wH-zju"/>
                             <constraint firstItem="IGZ-kB-hJb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-8" id="VUg-I4-rxw"/>

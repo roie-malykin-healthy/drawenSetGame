@@ -7,5 +7,9 @@
 
 import Foundation
 struct SetAnimationConstants {
-    let cardGrowTime = 1.0
+    let cardGrowTime = 0.4
+    
+    func growTime() -> TimeInterval {
+        cardGrowTime
+    }
 }

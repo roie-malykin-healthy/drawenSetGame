@@ -8,6 +8,7 @@ import UIKit
 let myAspectRatio = CGFloat(5.0 / 8.0)
 final class ViewController: UIViewController {
     // MARK: Attributes
+    private let animationConstants = SetAnimationConstants()
     private lazy var game = SetGame(numOfInitialReviledCards: 12)
     private var grid = Grid(layout: Grid.Layout.aspectRatio(myAspectRatio))
     // MARK: UIObjects
@@ -71,7 +72,9 @@ final class ViewController: UIViewController {
             let cardView = board[cardIndex]
             if game.board[cardIndex] != nil {
                 if isSelected(cardIndex: cardIndex) {
-                    UIView.transition(with: cardView, duration: SetAnimationConstants.cardGrowTime, animations: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+                    UIViewPropertyAnimator.runningPropertyAnimator( withDuration: animationConstants.growTime(), delay: 0, options: [], animations: { cardView.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2) }, completion: { _ in
+                        UIViewPropertyAnimator.runningPropertyAnimator( withDuration: self.animationConstants.growTime(), delay: 0, options: [], animations: { cardView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1 ) }) })
+                    //                    UIView.transition(with: cardView, duration: animationConstants.growTime(), options: [.transitionFlipFromLeft], animations: {})
                     cardView.layer.borderWidth = 3.0
                     if isMatched(cardIndex: cardIndex) {
                         cardView.layer.borderColor = #colorLiteral(red: 0.1103723273, green: 0.9718676209, blue: 0.03995218128, alpha: 1)
@@ -85,7 +88,6 @@ final class ViewController: UIViewController {
                 }
             }
         }
-        
     }
     override func viewDidLoad() {
         // Gestures recognizer

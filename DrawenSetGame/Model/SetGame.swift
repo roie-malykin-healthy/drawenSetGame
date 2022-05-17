@@ -13,7 +13,6 @@ final class SetGame {
     private var selectedCardIndecies = Set<Int>()
     private var matchedCardsIndecies = Set<Int>()
     private var missMatchedCardIndecies = Set<Int>()
-    
     private var numOfAllreadySelectedCards: Int {
         selectedCardIndecies.count
     }
@@ -75,7 +74,6 @@ final class SetGame {
     
     func chooseCard(at index: Int ) -> Bool {
         assert(board.indices.contains(index), "SetGame.chooseCard(at: \(index) ) : Chosen index not on board ")
-        
         guard let chosenCard = board[index] else {
             return false
         }
@@ -128,7 +126,6 @@ final class SetGame {
     
     private func areSelectedCardsMatch(selectedCardIndecies: [Int]) -> Bool {
         assert(selectedCardIndecies.count == 3, "num of allready selected cards is: \(numOfAllreadySelectedCards)")
-    
         let firstSelectedCard = board[selectedCardIndecies[0]]!
         let secondSelectedCard = board[selectedCardIndecies[1]]!
         let thirdSelectedCard = board[selectedCardIndecies[2]]!
@@ -137,7 +134,6 @@ final class SetGame {
         print(firstSelectedCard)
         print(secondSelectedCard)
         print(thirdSelectedCard)
-        
         let isSetMatch: Bool = validFeatureMatch(firstCardFeature: firstSelectedCard.shading.rawValue, secondCardFeature: secondSelectedCard.shading.rawValue, thirdCardFeature: thirdSelectedCard.shading.rawValue) &&
         validFeatureMatch(firstCardFeature: firstSelectedCard.shape.rawValue, secondCardFeature: secondSelectedCard.shape.rawValue, thirdCardFeature: thirdSelectedCard.shape.rawValue) &&
         validFeatureMatch(firstCardFeature: firstSelectedCard.color.rawValue, secondCardFeature: secondSelectedCard.color.rawValue, thirdCardFeature: thirdSelectedCard.color.rawValue) &&
