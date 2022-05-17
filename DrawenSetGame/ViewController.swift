@@ -92,9 +92,19 @@ final class ViewController: UIViewController {
         let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(shuffle(sender:)))
         self.boardView.addGestureRecognizer(rotationGesture)
         self.boardView.addGestureRecognizer(swipeDown)
+        // Preparing grid to display cards
         grid = Grid(layout: .aspectRatio(myAspectRatio), frame: boardView.bounds)
         grid.cellCount = 12
         super.viewDidLoad()
+        // Preparing the Card piles
+        if let cardBackImage = UIImage(named: "cardBackWithDragons", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
+            // cardBackImage.draw(in: deckPileView.bounds) supposed to do this
+            //print("This works , but will it draw?")
+            //cardBackImage.draw(in: boardView.frame)
+        }
+        discardPileView.alpha = 0.0 // No discardPile while no cards are discarded
+        // deckPileView.
+        // Update all view , heappend allways after all else in viewDidLoad
         newGameView()
         updateUI()
     }
