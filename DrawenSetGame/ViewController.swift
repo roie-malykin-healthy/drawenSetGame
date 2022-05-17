@@ -9,7 +9,6 @@ let myAspectRatio = CGFloat(5.0 / 8.0)
 final class ViewController: UIViewController {
     // MARK: Attributes
     private var grid = Grid(layout: Grid.Layout.aspectRatio(myAspectRatio))
-    private let maxNumOfCardsOnBoard = 81
     private lazy var game = SetGame(numOfInitialReviledCards: 12)
     // MARK: Views
     @IBOutlet private weak var scoreLabel: UILabel!

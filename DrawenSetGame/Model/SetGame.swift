@@ -47,7 +47,6 @@ final class SetGame {
     // ------ Methods ------ \\
     init( numOfInitialReviledCards: Int) {
         self.deck = DeckOfSetCards()
-       // self.maxCardsOnBoard = maxNumOfCardsOnBoard
         self.board = [Card?]()
         for _ in 0..<numOfInitialReviledCards {
             putNewCardOnBoard()
