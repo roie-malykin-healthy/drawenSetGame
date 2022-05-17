@@ -87,12 +87,8 @@ final class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         // Gestures recognizer
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(deal3MoreCards(sender:)))
-        swipeDown.direction = .down
-        let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(shuffle(sender:)))
-        self.boardView.addGestureRecognizer(rotationGesture)
-        self.boardView.addGestureRecognizer(swipeDown)
-        // Preparing grid to display cards
+        deckPileView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deal3MoreCards(sender:))))
+
         grid = Grid(layout: .aspectRatio(myAspectRatio), frame: boardView.bounds)
         grid.cellCount = 12
         super.viewDidLoad()
