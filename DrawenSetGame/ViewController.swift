@@ -7,14 +7,17 @@
 import UIKit
 let myAspectRatio = CGFloat(5.0 / 8.0)
 final class ViewController: UIViewController {
+    // MARK: Attributes
+    private lazy var game = SetGame(numOfInitialReviledCards: 12)
     private var grid = Grid(layout: Grid.Layout.aspectRatio(myAspectRatio))
     private let maxNumOfCardsOnBoard = 81
-    @IBOutlet private weak var scoreLabel: UILabel!
-    private lazy var game = SetGame(numOfInitialReviledCards: 12)
-    var board: [SetCardView] = []
-    @IBOutlet private weak var boardView: UIView!
-    var selectedCardsToRemove: [Int] = []
     
+    // MARK: UIObjects
+    var board: [SetCardView] = []
+    @IBOutlet private weak var scoreLabel: UILabel!
+    @IBOutlet private weak var boardView: UIView!
+    @IBOutlet private weak var deckPileView: UIView!
+    @IBOutlet private weak var discardPileView: UIView!
     // MARK: Utility methods
     private func isSelected(cardIndex: Int) -> Bool { game.isSelected(cardIndex: cardIndex) }
     private func isMatched(cardIndex: Int) -> Bool { game.isMatched(cardIndex: cardIndex) }
@@ -75,16 +78,6 @@ final class ViewController: UIViewController {
         }
     }
     override func viewDidLoad() {
-        // Init the grid with 12 cards
-        
-        // Set up an uniform cardButton look
-        //        for cardButton in setCardButtons {
-        //            cardButton.backgroundColor = UIColor.black
-        //            cardButton.layer.cornerRadius = 8.0
-        //            cardButton.layer.borderWidth = 3.0
-        //        }
-        //       updateViewFromModel()
-        
         // Gestures recognizer
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(deal3MoreCards(sender:)))
         swipeDown.direction = .down

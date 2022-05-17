@@ -20,25 +20,35 @@
                                 <rect key="frame" x="22" y="44" width="371" height="673"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalCentering" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="gSB-Hp-tIf">
-                                <rect key="frame" x="41" y="764" width="332" height="96"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="gSB-Hp-tIf">
+                                <rect key="frame" x="41" y="756" width="332" height="96"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-6Y-Wp1">
-                                        <rect key="frame" x="0.0" y="4" width="65.5" height="88"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-6Y-Wp1">
+                                        <rect key="frame" x="0.0" y="11.5" width="55" height="73"/>
+                                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="SkT-6Y-Wp1" secondAttribute="height" multiplier="55:73" id="rR3-rD-I1g"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Ah-D1w">
-                                        <rect key="frame" x="122" y="33" width="89" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Ah-D1w">
+                                        <rect key="frame" x="121.5" y="33" width="89" height="30"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-LK-Hc9">
-                                        <rect key="frame" x="267.5" y="4" width="64.5" height="88"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-LK-Hc9">
+                                        <rect key="frame" x="276" y="11.5" width="56" height="73"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eBf-LK-Hc9" secondAttribute="height" multiplier="56:73" id="B3z-kk-S4Q"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gSB-Hp-tIf" secondAttribute="height" multiplier="83:24" id="lPx-cQ-wKH"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -56,6 +66,8 @@
                     </view>
                     <connections>
                         <outlet property="boardView" destination="IGZ-kB-hJb" id="3ue-xE-beU"/>
+                        <outlet property="deckPileView" destination="SkT-6Y-Wp1" id="i7H-xo-pfj"/>
+                        <outlet property="discardPileView" destination="eBf-LK-Hc9" id="fKj-y3-toz"/>
                         <outlet property="scoreLabel" destination="g0l-Ah-D1w" id="JVD-vF-Mep"/>
                     </connections>
                 </viewController>
@@ -65,11 +77,14 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
