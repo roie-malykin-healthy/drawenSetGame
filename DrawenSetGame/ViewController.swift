@@ -71,6 +71,7 @@ final class ViewController: UIViewController {
             let cardView = board[cardIndex]
             if game.board[cardIndex] != nil {
                 if isSelected(cardIndex: cardIndex) {
+                    UIView.transition(with: cardView, duration: SetAnimationConstants.cardGrowTime, animations: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
                     cardView.layer.borderWidth = 3.0
                     if isMatched(cardIndex: cardIndex) {
                         cardView.layer.borderColor = #colorLiteral(red: 0.1103723273, green: 0.9718676209, blue: 0.03995218128, alpha: 1)
@@ -84,6 +85,7 @@ final class ViewController: UIViewController {
                 }
             }
         }
+        
     }
     override func viewDidLoad() {
         // Gestures recognizer
@@ -103,7 +105,7 @@ final class ViewController: UIViewController {
             // print("This works , but will it draw?")
             // cardBackImage.draw(in: boardView.frame)
         }
-        discardPileView.alpha = 0.0 // No discardPile while no cards are discarded
+        // discardPileView.alpha = 0.0 // No discardPile while no cards are discarded
         // deckPileView.
         // Update all view , heappend allways after all else in viewDidLoad
         newGameView()
@@ -112,11 +114,11 @@ final class ViewController: UIViewController {
     private func updateUI() {
         updateBoardFromModel()
         clearAllSubViewsOfBoard()
-        var indexOfCard = 0
+        var cardIndex = 0
         for setCardView in board {
             setCardView.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-            setCardView.frame = grid[indexOfCard]!.insetBy(dx: 2, dy: 2)
-            indexOfCard += 1
+            setCardView.frame = grid[cardIndex]!.insetBy(dx: 2, dy: 2)
+            cardIndex += 1
             setCardView.backgroundColor = UIColor.clear
             boardView.addSubview(setCardView)
         }

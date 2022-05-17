@@ -23,7 +23,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="gSB-Hp-tIf">
                                 <rect key="frame" x="41" y="756" width="332" height="96"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-6Y-Wp1">
+                                    <view autoresizesSubviews="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-6Y-Wp1">
                                         <rect key="frame" x="0.0" y="11.5" width="55" height="73"/>
                                         <color key="backgroundColor" systemColor="systemMintColor"/>
                                         <constraints>
@@ -38,7 +38,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-LK-Hc9">
+                                    <view autoresizesSubviews="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-LK-Hc9">
                                         <rect key="frame" x="276" y="11.5" width="56" height="73"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
