@@ -88,15 +88,20 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         // Gestures recognizer
         deckPileView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deal3MoreCards(sender:))))
-
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(deal3MoreCards(sender:)))
+        swipeDown.direction = .down
+        let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(shuffle(sender:)))
+        self.boardView.addGestureRecognizer(rotationGesture)
+        self.boardView.addGestureRecognizer(swipeDown)
+        // Preparing grid to display cards
         grid = Grid(layout: .aspectRatio(myAspectRatio), frame: boardView.bounds)
         grid.cellCount = 12
         super.viewDidLoad()
         // Preparing the Card piles
         if let cardBackImage = UIImage(named: "cardBackWithDragons", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
             // cardBackImage.draw(in: deckPileView.bounds) supposed to do this
-            //print("This works , but will it draw?")
-            //cardBackImage.draw(in: boardView.frame)
+            // print("This works , but will it draw?")
+            // cardBackImage.draw(in: boardView.frame)
         }
         discardPileView.alpha = 0.0 // No discardPile while no cards are discarded
         // deckPileView.
