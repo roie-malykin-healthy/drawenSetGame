@@ -46,8 +46,8 @@
             filePath = "DrawenSetGame/Model/SetGame.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "chooseCard(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "DrawenSetGame/Model/SetGame.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "chooseCard(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -71,79 +71,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C747BE7B-EA94-42F2-86FA-707C60CF293F"
-            shouldBeEnabled = "No"
+            uuid = "614CACEF-DBDF-460F-A02C-A2AAB8EA21C9"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DrawenSetGame/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "C747BE7B-EA94-42F2-86FA-707C60CF293F - 7801363a3710839"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DrawenSetGame.ViewController.boardView.getter : Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "DrawenSetGame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roie.malykin/Developer/DrawenSetGame/DrawenSetGame/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "94">
-               </Location>
-               <Location
-                  uuid = "C747BE7B-EA94-42F2-86FA-707C60CF293F - 7bd570659427402d"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DrawenSetGame.ViewController.boardView.setter : Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "DrawenSetGame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roie.malykin/Developer/DrawenSetGame/DrawenSetGame/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  uuid = "C747BE7B-EA94-42F2-86FA-707C60CF293F - 94e873b1929c4a7f"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DrawenSetGame.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; DrawenSetGame.ViewController"
-                  moduleName = "DrawenSetGame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roie.malykin/Developer/DrawenSetGame/DrawenSetGame/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "502">
-               </Location>
-               <Location
-                  uuid = "C747BE7B-EA94-42F2-86FA-707C60CF293F - 28dea60b6f37a8f4"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DrawenSetGame.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;DrawenSetGame.ViewController&gt;"
-                  moduleName = "DrawenSetGame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roie.malykin/Developer/DrawenSetGame/DrawenSetGame/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "450">
-               </Location>
-            </Locations>
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "shuffle(sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

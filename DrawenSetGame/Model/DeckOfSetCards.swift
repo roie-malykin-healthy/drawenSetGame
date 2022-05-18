@@ -24,7 +24,6 @@ struct DeckOfSetCards {
         }
         // 2) Shuffle them each time
         deck.shuffle() // #warning Need to test if this does not disrupt game logic
-        
     }
     func isEmptyDeack() -> Bool {
         deck.isEmpty

@@ -24,6 +24,7 @@
 		BCCF9133282A5BF700C8DA31 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF9132282A5BF700C8DA31 /* Grid.swift */; };
 		BCCF9135282A5C2C00C8DA31 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF9134282A5C2C00C8DA31 /* Card.swift */; };
 		BCCF9137282A5C9400C8DA31 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF9136282A5C9400C8DA31 /* SetGame.swift */; };
+		BCFECF202833F401001AE53E /* SetDummyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFECF1F2833F401001AE53E /* SetDummyCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		BCCF9132282A5BF700C8DA31 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		BCCF9134282A5C2C00C8DA31 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BCCF9136282A5C9400C8DA31 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
+		BCFECF1F2833F401001AE53E /* SetDummyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDummyCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				BCC535E1282A6378003A4DD5 /* SetCardView.swift */,
 				BCC535E3282A65EC003A4DD5 /* SetBoardView.swift */,
 				BC4FE9892833A7720069098C /* SetAnimationConstants.swift */,
+				BCFECF1F2833F401001AE53E /* SetDummyCardView.swift */,
 			);
 			path = MyViews;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				BCC535E0282A62F8003A4DD5 /* DeckOfSetCards.swift in Sources */,
 				BCC535E4282A65EC003A4DD5 /* SetBoardView.swift in Sources */,
 				BCC535E2282A6378003A4DD5 /* SetCardView.swift in Sources */,
+				BCFECF202833F401001AE53E /* SetDummyCardView.swift in Sources */,
 				BCC535DC282A6288003A4DD5 /* CardShape.swift in Sources */,
 				BCCF9121282A59C000C8DA31 /* ViewController.swift in Sources */,
 				BCCF911D282A59C000C8DA31 /* AppDelegate.swift in Sources */,

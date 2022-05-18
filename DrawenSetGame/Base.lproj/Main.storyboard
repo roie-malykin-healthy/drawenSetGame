@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,54 +17,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IGZ-kB-hJb">
-                                <rect key="frame" x="23" y="36" width="371" height="629"/>
+                                <rect key="frame" x="23" y="45" width="371" height="651"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gSB-Hp-tIf">
-                                <rect key="frame" x="41" y="712" width="332" height="140"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="50e-kt-1m5">
+                                <rect key="frame" x="23" y="712" width="371" height="150"/>
                                 <subviews>
-                                    <view autoresizesSubviews="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-6Y-Wp1">
-                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="140"/>
-                                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackWithDragons" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-lt-7yS">
+                                        <rect key="frame" x="0.0" y="0.0" width="154" height="150"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="SkT-6Y-Wp1" secondAttribute="height" multiplier="55:73" id="rR3-rD-I1g"/>
+                                            <constraint firstAttribute="height" constant="150" id="Dhm-6V-B59"/>
                                         </constraints>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Ah-D1w">
-                                        <rect key="frame" x="113.5" y="55" width="105" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWE-Jm-2RV">
+                                        <rect key="frame" x="154" y="65" width="63.5" height="20"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aWE-Jm-2RV" secondAttribute="height" multiplier="63:20" id="rkr-gy-FyI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view autoresizesSubviews="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-LK-Hc9">
-                                        <rect key="frame" x="226.5" y="1.5" width="105.5" height="137.5"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackWithDragons" translatesAutoresizingMaskIntoConstraints="NO" id="kb5-3Z-U7R">
+                                        <rect key="frame" x="217.5" y="0.0" width="153.5" height="150"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="eBf-LK-Hc9" secondAttribute="height" multiplier="56:73" id="B3z-kk-S4Q"/>
+                                            <constraint firstAttribute="height" constant="150" id="1dk-m3-xF4"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="50e-kt-1m5" secondAttribute="trailing" constant="20" id="4jO-mT-Tjn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IGZ-kB-hJb" secondAttribute="trailing" constant="20" id="6Kl-YO-D4p"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gSB-Hp-tIf" secondAttribute="bottom" constant="10" id="GcC-wH-zju"/>
-                            <constraint firstItem="IGZ-kB-hJb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-8" id="VUg-I4-rxw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gSB-Hp-tIf" secondAttribute="trailing" constant="41" id="Z8l-vp-kek"/>
+                            <constraint firstItem="50e-kt-1m5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="Jna-yl-oTE"/>
+                            <constraint firstItem="IGZ-kB-hJb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="VUg-I4-rxw"/>
                             <constraint firstItem="IGZ-kB-hJb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="cxP-SX-Qdw"/>
-                            <constraint firstItem="gSB-Hp-tIf" firstAttribute="top" secondItem="IGZ-kB-hJb" secondAttribute="bottom" constant="47" id="ghC-sL-Wwh"/>
-                            <constraint firstItem="gSB-Hp-tIf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="hN5-do-TSa"/>
+                            <constraint firstItem="50e-kt-1m5" firstAttribute="top" secondItem="IGZ-kB-hJb" secondAttribute="bottom" constant="16" id="fYQ-zx-Hjb"/>
+                            <constraint firstItem="50e-kt-1m5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ufa-zA-kXT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="boardView" destination="IGZ-kB-hJb" id="3ue-xE-beU"/>
-                        <outlet property="deckPileView" destination="SkT-6Y-Wp1" id="i7H-xo-pfj"/>
-                        <outlet property="discardPileView" destination="eBf-LK-Hc9" id="fKj-y3-toz"/>
-                        <outlet property="scoreLabel" destination="g0l-Ah-D1w" id="JVD-vF-Mep"/>
+                        <outlet property="deckPileView" destination="Qva-lt-7yS" id="gn1-jf-cjo"/>
+                        <outlet property="discardPileView" destination="kb5-3Z-U7R" id="hWw-qM-LRF"/>
+                        <outlet property="scoreLabel" destination="aWE-Jm-2RV" id="A1H-lQ-Ijf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,17 +74,12 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="cardBackWithDragons" width="1200" height="1200"/>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

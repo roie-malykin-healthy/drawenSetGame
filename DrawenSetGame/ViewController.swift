@@ -13,10 +13,10 @@ final class ViewController: UIViewController {
     private var grid = Grid(layout: Grid.Layout.aspectRatio(myAspectRatio))
     // MARK: UIObjects
     var board: [SetCardView] = []
+    @IBOutlet private weak var discardPileView: UIImageView!
+    @IBOutlet private weak var deckPileView: UIImageView!
     @IBOutlet private weak var scoreLabel: UILabel!
-    @IBOutlet private weak var boardView: UIView!
-    @IBOutlet private weak var deckPileView: UIView!
-    @IBOutlet private weak var discardPileView: UIView!
+    @IBOutlet private weak var boardView: UIImageView!
     // MARK: Utility methods
     private func isSelected(cardIndex: Int) -> Bool { game.isSelected(cardIndex: cardIndex) }
     private func isMatched(cardIndex: Int) -> Bool { game.isMatched(cardIndex: cardIndex) }
@@ -75,7 +75,7 @@ final class ViewController: UIViewController {
                     UIViewPropertyAnimator.runningPropertyAnimator( withDuration: animationConstants.growTime(), delay: 0, options: [], animations: { cardView.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2) }, completion: { _ in
                         UIViewPropertyAnimator.runningPropertyAnimator( withDuration: self.animationConstants.growTime(), delay: 0, options: [], animations: { cardView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1 ) }) })
                     //                    UIView.transition(with: cardView, duration: animationConstants.growTime(), options: [.transitionFlipFromLeft], animations: {})
-                    cardView.layer.borderWidth = 3.0
+                    cardView.layer.borderWidth = 6.0
                     if isMatched(cardIndex: cardIndex) {
                         cardView.layer.borderColor = #colorLiteral(red: 0.1103723273, green: 0.9718676209, blue: 0.03995218128, alpha: 1)
                     } else if isMissMatched(cardIndex: cardIndex) {
@@ -91,6 +91,7 @@ final class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         // Gestures recognizer
+        deckPileView.isUserInteractionEnabled = true
         deckPileView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deal3MoreCards(sender:))))
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(deal3MoreCards(sender:)))
         swipeDown.direction = .down
@@ -102,11 +103,6 @@ final class ViewController: UIViewController {
         grid.cellCount = 12
         super.viewDidLoad()
         // Preparing the Card piles
-        if let cardBackImage = UIImage(named: "cardBackWithDragons", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
-            // cardBackImage.draw(in: deckPileView.bounds) supposed to do this
-            // print("This works , but will it draw?")
-            // cardBackImage.draw(in: boardView.frame)
-        }
         // discardPileView.alpha = 0.0 // No discardPile while no cards are discarded
         // deckPileView.
         // Update all view , heappend allways after all else in viewDidLoad

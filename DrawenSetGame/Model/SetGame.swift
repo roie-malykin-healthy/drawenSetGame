@@ -22,7 +22,6 @@ final class SetGame {
     func isMatched(cardIndex: Int) -> Bool { matchedCardsIndecies.contains(cardIndex) }
     func isMissMatched(cardIndex: Int) -> Bool { missMatchedCardIndecies.contains(cardIndex) }
     private func removeFromSelectedIndecies(i: Int) {
-//        assert(selectedCardIndecies.firstIndex(of: i)! != nil, "SetGame.removeFromSelectedIndecies(index: Int) Error ! you are trying to remove and index: \(i) ,  that is not contained in selectedCardIndecies")
         if let indexToRemove = selectedCardIndecies.firstIndex(of: i) {
             selectedCardIndecies.remove(at: indexToRemove)
         } else {
@@ -30,17 +29,14 @@ final class SetGame {
         }
     }
     private func addToSelectedIndecies(cardIndex: Int) {
-//        assert(selectedCardIndecies.contains(cardIndex), "SetGame.addToSelectedIndecies(\(cardIndex)) , MAJOR LOGIC ERROR this card is allready selected!!!")
         selectedCardIndecies.insert(cardIndex)
     }
     
     private func addToMatchedIndecies(cardIndex: Int) {
-//        assert(matchedCardsIndecies.contains(cardIndex), "SetGame.addToSelectedIndecies(\(cardIndex)) , MAJOR LOGIC ERROR this card is allready selected!!!")
         matchedCardsIndecies.insert(cardIndex)
     }
     
     private func addToMissMatchedIndecies(cardIndex: Int) {
-//        assert(missMatchedCardIndecies.contains(cardIndex), "SetGame.addToSelectedIndecies(\(cardIndex)) , MAJOR LOGIC ERROR this card is allready selected!!!")
         missMatchedCardIndecies.insert(cardIndex)
     }
     // ------ Methods ------ \\
@@ -81,6 +77,7 @@ final class SetGame {
         if !isMatched(cardIndex: index) {
             if isSelected(cardIndex: index) {
                 removeFromSelectedIndecies(i: index)
+                missMatchedCardIndecies.removeAll()
             } else {
                 addToSelectedIndecies(cardIndex: index)
                 let selectedIndecies = selectedCardIndecies // Might be unneeded after logic change
