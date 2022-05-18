@@ -57,6 +57,8 @@ final class ViewController: UIViewController {
         game = SetGame( numOfInitialReviledCards: 12)
         for card in game.board where card != nil {
             let cardView = SetCardView(card: card!)
+            // 1) make anumation born  at deckPile
+            // 2) land on grid
             board.append(cardView)
         }
         updateViewFromModel()
@@ -110,7 +112,7 @@ final class ViewController: UIViewController {
     }
     private func updateUI() {
         updateBoardFromModel()
-        clearAllSubViewsOfBoard()
+        // clearAllSubViewsOfBoard()
         var cardIndex = 0
         for setCardView in board {
             setCardView.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
@@ -120,6 +122,11 @@ final class ViewController: UIViewController {
             boardView.addSubview(setCardView)
         }
     }
+    
+    private func flyFromDeckToGridAndFlip(gridIndexToLand: Int) {
+        let
+    }
+    
     private func updateBoardFromModel() {
         var boardViewCards = [SetCardView]()
         for card in game.board where card != nil {

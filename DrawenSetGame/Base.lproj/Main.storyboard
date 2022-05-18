@@ -48,6 +48,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="cardBackWithDragons" translatesAutoresizingMaskIntoConstraints="NO" id="mKf-IV-7XN">
+                                <rect key="frame" x="23" y="605" width="154" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="wSS-6D-jw4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
