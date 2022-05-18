@@ -13,9 +13,9 @@ final class SetGame {
     private var selectedCardIndecies = Set<Int>()
     private var matchedCardsIndecies = Set<Int>()
     private var missMatchedCardIndecies = Set<Int>()
-    private var numOfAllreadySelectedCards: Int {
-        selectedCardIndecies.count
-    }
+//    private var numOfAllreadySelectedCards: Int {
+//        selectedCardIndecies.count
+//    }
     
     // MARK: Utility methods for readability
     func isSelected(cardIndex: Int) -> Bool { selectedCardIndecies.contains(cardIndex) }
@@ -122,7 +122,6 @@ final class SetGame {
     }
     
     private func areSelectedCardsMatch(selectedCardIndecies: [Int]) -> Bool {
-        assert(selectedCardIndecies.count == 3, "num of allready selected cards is: \(numOfAllreadySelectedCards)")
         let firstSelectedCard = board[selectedCardIndecies[0]]!
         let secondSelectedCard = board[selectedCardIndecies[1]]!
         let thirdSelectedCard = board[selectedCardIndecies[2]]!

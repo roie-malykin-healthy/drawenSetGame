@@ -78,6 +78,7 @@ final class ViewController: UIViewController {
                     cardView.layer.borderWidth = 6.0
                     if isMatched(cardIndex: cardIndex) {
                         cardView.layer.borderColor = #colorLiteral(red: 0.1103723273, green: 0.9718676209, blue: 0.03995218128, alpha: 1)
+                        discardPileView.alpha = 1
                     } else if isMissMatched(cardIndex: cardIndex) {
                         cardView.layer.borderColor = #colorLiteral(red: 0.9995762706, green: 0.003950693179, blue: 0.1662335396, alpha: 1)
                     } else {
@@ -102,10 +103,8 @@ final class ViewController: UIViewController {
         grid = Grid(layout: .aspectRatio(myAspectRatio), frame: boardView.bounds)
         grid.cellCount = 12
         super.viewDidLoad()
-        // Preparing the Card piles
-        // discardPileView.alpha = 0.0 // No discardPile while no cards are discarded
-        // deckPileView.
-        // Update all view , heappend allways after all else in viewDidLoad
+       // discardPile is invisible while no cards are matched
+        discardPileView.alpha = 0.0
         newGameView()
         updateUI()
     }
