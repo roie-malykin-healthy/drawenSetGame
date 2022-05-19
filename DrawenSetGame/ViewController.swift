@@ -43,6 +43,8 @@ final class ViewController: UIViewController {
             game.putNewCardOnBoard()
         }
         updateViewFromModel()
+        // Fly from deck function Should not be here, its just for dev
+        flyFromDeckToGridAndFlip(cardIndex: 3)
     }
     
     @objc func shuffle(sender: UIView) {
@@ -109,6 +111,7 @@ final class ViewController: UIViewController {
         grid.cellCount = 12
         super.viewDidLoad()
        // discardPile is invisible while no cards are matched
+        view.addSubview(fakeCardBack)
         discardPileView.alpha = 0.0
         newGameView()
         // updateUI()
@@ -124,29 +127,54 @@ final class ViewController: UIViewController {
             cardIndex += 1
             setCardView.backgroundColor = UIColor.clear
             boardView.addSubview(setCardView)
-            
         }
         // flyFromDeckToGridAndFlip(cardIndex:0)
         
     }
     
     private func flyFromDeckToGridAndFlip(cardIndex: Int) {
-       // let frame = sender.convert(sender.bounds, to: self.view) This is internet example
-        view.addSubview(fakeCardBack)
-        // fakeCardBack.frame = deckPileView.convert(deckPileView.frame, to: view)
+        // 1) Put fake card at the deck position.
+        print("this is self.view: \(String(describing: self.view))")
+        print("fake card frame initialy is: \(fakeCardBack.frame) , in supeview: \(fakeCardBack.superview ?? <#default value#>)")
+        let deckFrame = self.view.convert(deckPileView.frame, from: deckPileView.superview)
+        print("deck frame is: \(deckFrame)")
+        fakeCardBack.frame = deckFrame
         fakeCardBack.alpha = 1
-        fakeCardBack.frame = deckPileView.frame// Hide it
-        fakeCardBack.setNeedsDisplay()
-        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 5, delay: 0, options: [.curveLinear], animations: { [self] in
-            self.fakeCardBack.frame = myViewCard.convert(myViewCard.frame, to: view)
-            self.fakeCardBack.isHidden = false
-            self.fakeCardBack.alpha = 1})
-        animationCounter += 1
-        print("did something heappend? \(animationCounter)")
+        viewDidLayoutSubviews()
+        // fakeCardBack.frame = CGRect
+print("fake card frame changed to is: \(fakeCardBack.frame) , in supeview: \(fakeCardBack.superview ?? default value)")
+        // 2) Make it visable (Fading in?).
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 2, delay: 0, options: [.transitionFlipFromLeft], animations: { [self] in fakeCardBack.frame = deckFrame }, completion: { _ in print("its works?") })
+       
+        // fakeCardBack.alpha = 1
+        // 3) Animate movement to grid[cardIndex
+       // deckPileView.frame = CGRect(x: 100, y: 100, width: 200, height: 500)
+//        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 5, delay: 1, options: [.curveEaseInOut], animations: { [self] in fakeCardBack.frame  = CGRect(x: 700, y: 700, width: 200, height: 500) }, completion: { _ in print( "animation Done" ) })
+//        print("fly from deck gets here")
+        //        let frame = sender.convert(sender.bounds, to: self.view) This is internet example
+//        view.addSubview(fakeCardBack)
+//         fakeCardBack.frame = deckPileView.convert(deckPileView.frame, to: view)
+//        fakeCardBack.alpha = 1
+//        fakeCardBack.frame = deckPileView.frame// Hide it
+//        fakeCardBack.setNeedsDisplay()
+//        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 5, delay: 0, options: [.curveLinear], animations: { [self] in
+//            self.fakeCardBack.frame = myViewCard.convert(myViewCard.frame, to: view)
+//            self.fakeCardBack.isHidden = false
+//            self.fakeCardBack.alpha = 1})
+//        animationCounter += 1
+//        print("did something heappend? \(animationCounter)")
 //        }, completion: { _ in } UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.6, delay: 0, options: [.curveEaseIn], animations: {_ in self.fakeCardBack.transform = CGAffineTransform(translationX: <#T##CGFloat#>, y: <#T##CGFloat#>)}, completion: <#T##((UIViewAnimatingPosition) -> Void)?##((UIViewAnimatingPosition) -> Void)?##(UIViewAnimatingPosition) -> Void#>))}
-//        //fakeCardBack.
     }
     
+    private func funcTestMovmentAnimation() {
+        deckPileView.alpha = 1
+        UIViewPropertyAnimator.runningPropertyAnimator(
+            withDuration: 3,
+            delay: 0,
+            options: [],
+            animations: { [self] in deckPileView.transform = CGAffineTransform.identity.translatedBy(x: 50.0, y: 50.0)    },
+            completion: { _ in print("was there any movment????") })
+    }
     private func updateBoardFromModel() {
         var boardViewCards = [SetCardView]()
         for card in game.board where card != nil {
@@ -162,11 +190,10 @@ final class ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        updateUI()
+        // updateUI()
     }
     override func viewDidLayoutSubviews() { // So the app will redraw all sublayouts when screen is tilted.
         grid = Grid(layout: .aspectRatio(myAspectRatio), frame: boardView.bounds)
-
         updateViewFromModel()
     }
 }
