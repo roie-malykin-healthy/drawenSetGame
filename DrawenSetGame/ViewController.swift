@@ -5,6 +5,7 @@
 //  Created by Roie Malykin on 10/05/2022.
 //
 import UIKit
+var animationCounter = 0
 let myAspectRatio = CGFloat(5.0 / 8.0)
 final class ViewController: UIViewController {
     // MARK: Attributes
@@ -17,6 +18,7 @@ final class ViewController: UIViewController {
     @IBOutlet private weak var deckPileView: UIImageView!
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var boardView: UIImageView!
+    @IBOutlet private weak var fakeCardBack: UIImageView!
     // MARK: Utility methods
     private func isSelected(cardIndex: Int) -> Bool { game.isSelected(cardIndex: cardIndex) }
     private func isMatched(cardIndex: Int) -> Bool { game.isMatched(cardIndex: cardIndex) }
@@ -96,6 +98,7 @@ final class ViewController: UIViewController {
         // Gestures recognizer
         deckPileView.isUserInteractionEnabled = true
         deckPileView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deal3MoreCards(sender:))))
+        fakeCardBack.alpha = 0
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(deal3MoreCards(sender:)))
         swipeDown.direction = .down
         let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(shuffle(sender:)))
@@ -108,23 +111,40 @@ final class ViewController: UIViewController {
        // discardPile is invisible while no cards are matched
         discardPileView.alpha = 0.0
         newGameView()
-        updateUI()
+        // updateUI()
     }
     private func updateUI() {
         updateBoardFromModel()
-        // clearAllSubViewsOfBoard()
+        clearAllSubViewsOfBoard()
         var cardIndex = 0
         for setCardView in board {
             setCardView.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
             setCardView.frame = grid[cardIndex]!.insetBy(dx: 2, dy: 2)
+            // flyFromDeckToGridAndFlip(myViewCard: setCardView, gridIndexToLand: cardIndex)
             cardIndex += 1
             setCardView.backgroundColor = UIColor.clear
             boardView.addSubview(setCardView)
+            
         }
+        // flyFromDeckToGridAndFlip(cardIndex:0)
+        
     }
     
-    private func flyFromDeckToGridAndFlip(gridIndexToLand: Int) {
-        let
+    private func flyFromDeckToGridAndFlip(cardIndex: Int) {
+       // let frame = sender.convert(sender.bounds, to: self.view) This is internet example
+        view.addSubview(fakeCardBack)
+        // fakeCardBack.frame = deckPileView.convert(deckPileView.frame, to: view)
+        fakeCardBack.alpha = 1
+        fakeCardBack.frame = deckPileView.frame// Hide it
+        fakeCardBack.setNeedsDisplay()
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 5, delay: 0, options: [.curveLinear], animations: { [self] in
+            self.fakeCardBack.frame = myViewCard.convert(myViewCard.frame, to: view)
+            self.fakeCardBack.isHidden = false
+            self.fakeCardBack.alpha = 1})
+        animationCounter += 1
+        print("did something heappend? \(animationCounter)")
+//        }, completion: { _ in } UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.6, delay: 0, options: [.curveEaseIn], animations: {_ in self.fakeCardBack.transform = CGAffineTransform(translationX: <#T##CGFloat#>, y: <#T##CGFloat#>)}, completion: <#T##((UIViewAnimatingPosition) -> Void)?##((UIViewAnimatingPosition) -> Void)?##(UIViewAnimatingPosition) -> Void#>))}
+//        //fakeCardBack.
     }
     
     private func updateBoardFromModel() {
@@ -140,8 +160,13 @@ final class ViewController: UIViewController {
     private func clearAllSubViewsOfBoard() {
         boardView.subviews.forEach({ $0.removeFromSuperview() })
     }
+    
+    override func viewWillLayoutSubviews() {
+        updateUI()
+    }
     override func viewDidLayoutSubviews() { // So the app will redraw all sublayouts when screen is tilted.
         grid = Grid(layout: .aspectRatio(myAspectRatio), frame: boardView.bounds)
+
         updateViewFromModel()
     }
 }
